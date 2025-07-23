@@ -1,0 +1,7 @@
+{
+  "routes": {
+    "/ang-app": {},
+    "/ang-app/about": {},
+    "/ang-app/contact": {}
+  }
+}

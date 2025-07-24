@@ -26,7 +26,10 @@ jobs:
 
       - name: Build Angular app
         run: npm run build -- --configuration production
-
+        
+      - name: Add fallback for Angular routing
+        run: cp dist/angular-course-become-a-job-ready-developer/index.html dist/angular-course-become-a-job-ready-developer/404.html
+        
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:

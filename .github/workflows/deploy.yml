@@ -3,10 +3,10 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - main # or your default branch
+      - main
 
 permissions:
-  contents: write # allow pushing to gh-pages branch
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -26,12 +26,12 @@ jobs:
 
       - name: Build Angular app
         run: npm run build -- --configuration production
-        
+
       - name: Add fallback for Angular routing
-        run: cp dist/angular-course-become-a-job-ready-developer/index.html dist/angular-course-become-a-job-ready-developer/404.html
-        
+        run: cp dist/angular-course-become-a-job-ready-developer/browser/index.html dist/angular-course-become-a-job-ready-developer/browser/404.html
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main-gh-pages
-          folder: dist/angular-course-become-a-job-ready-developer
+          folder: dist/angular-course-become-a-job-ready-developer/browser
